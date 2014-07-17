@@ -1,6 +1,10 @@
 package com.example.gongzhu;
 
+import com.syh.dalilystudio.WifiUtil;
+
 import android.content.Intent;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,31 +26,8 @@ public class WelcomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.container, new PlaceholderFragment()).commit();
-//        }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     /**
      * A placeholder fragment containing a simple view.
@@ -66,15 +47,20 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     public void lanPlay(View view) {
-        HallActivity.startActivity(this, HallActivity.LAN_PLAY);
+        Intent intent=new Intent(this,HallActivity.class);
+        intent.putExtra(Constants.EXTRA_PLAY_TYPE, Constants.LAN_PLAY);
+        startActivity(intent);
     }
 
     public void wanPlay(View view) {
-        HallActivity.startActivity(this, HallActivity.WAN_PLAY);
+        Intent intent=new Intent(this,HallActivity.class);
+        intent.putExtra(Constants.EXTRA_PLAY_TYPE, Constants.WAN_PLAY);
+        startActivity(intent);
     }
 
     public void singlePlay(View view) {
         Intent intent=new Intent(this,GameActivity.class);
+        intent.putExtra(Constants.EXTRA_PLAY_TYPE, Constants.SINGLE_PLAY);
         startActivity(intent);
     }
 }

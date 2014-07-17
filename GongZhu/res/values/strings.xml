@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="activity_hall">游戏大厅</string>
+    <string name="create_room">创建房间</string>
+    <string name="join">加入</string>
 
 </resources>

@@ -16,11 +16,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="wanPlay" />
+        android:text="联网对战"
+        android:onClick="wanPlay" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="singlePlay" />
+        android:text="人机对战"
+        android:onClick="singlePlay" />
 
 </LinearLayout>
